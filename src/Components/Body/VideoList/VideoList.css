@@ -1,0 +1,38 @@
+.video-list {
+    background-color: #141414;
+    padding-bottom: 40px;
+}
+.video-list__nav {
+    display: flex;
+    justify-content: flex-end;
+}
+.video-list h2 {
+    color:white;
+    margin-bottom: -12px;
+    margin-left: 10px;
+}
+.slider {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.video-list__image {
+    width: 260px;
+    height: 224px;
+    margin: 10px;
+    margin: 0px 10px;
+}
+
+.video-list__nav {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.video-list__nav button{
+    width: 30px;
+    margin: 10px;
+    font-size: 20px;
+    background-color: #141414;
+    color:white;
+    border: none;
+}

@@ -1,0 +1,49 @@
+.play {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin:5px;
+}
+
+.more-info {
+    display: flex;
+    align-items: center;
+    background-color: #33302D;
+    color: white;
+    margin: 5px;
+}
+
+.btns {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+
+.white {
+    background-color: white;
+}
+
+.desc {
+    margin-top: 300px;
+    color: #FFFFDE;
+    width: 70%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 20px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.videos {
+    background-color: #141414;
+    padding-left: 25px;
+    padding-top: 10px;
+    position: relative;
+    z-index: 100;
+    width: 100vw;
+}
+
+.video-desc {
+    margin-bottom: 100px;
+}
