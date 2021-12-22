@@ -11,7 +11,6 @@ function Categories() {
   console.log(genres);
 
   useEffect(() => {
-    console.log(process.env);
     fetch(
       `https://api.themoviedb.org/3/genre/movie/list?api_key=813f004417e46fdc21b11b2dbcd0d00c&language=en-US`
     )
@@ -53,7 +52,7 @@ function Categories() {
       dispatch(movieListAction(genres[4]?.name, data.results))
     );
   }, [genres]);
-
+  console.log(movies[genres[1]?.name])
   return (
     <>
       {genres?.slice(0, 5).map((genre) => {

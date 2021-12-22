@@ -9,7 +9,7 @@ function Header() {
 
   useEffect(() => {
     document.addEventListener('scroll',(e) => {
-      const dom = document.querySelector(".header_header__2sh-q");
+      const dom = document.querySelector(".header_header__3b2OZ");
       if(window.pageYOffset < 14) {
         dom.style.backgroundColor = "transparent"
       } 

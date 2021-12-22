@@ -10,9 +10,9 @@ const movieReducer = (state = initState, action) => {
         state[id] = payload
       }
       console.log(state,"red");
-      return state;
+      return {...state};
     default:
-      return state;
+      return {...state};
   }
 };
 

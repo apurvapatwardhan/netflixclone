@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 function VideoList({ title, movieList }) {
   const sliderRef = useRef();
 
+  console.log(movieList, "vl")
+
   const [links, setLinks] = useState([
     "https://images.pexels.com/photos/10334730/pexels-photo-10334730.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     "https://images.pexels.com/photos/9042872/pexels-photo-9042872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
@@ -20,16 +22,13 @@ function VideoList({ title, movieList }) {
   });
 
   useEffect(() => {
-    console.log(movieList)
-      if(movieList) {
-        setLinks(
-          movieList?.map(
-            (movie) => `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-          )
-        );
-      }
-  }, [movieList]);
-
+      setLinks(
+        movieList?.map(
+          (movie) => `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+        )
+      );
+  },[movieList]);
+  console.log("render");
   return (
     <div className="video-list">
       <h2>{title}</h2>
@@ -43,6 +42,7 @@ function VideoList({ title, movieList }) {
           slidesToShow={5}
           slidesToScroll={2}
           arrows={false}
+          initialSlide={0}
           responsive={[
             {
               breakpoint: 1200,
