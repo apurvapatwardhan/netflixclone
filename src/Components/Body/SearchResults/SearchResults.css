@@ -1,0 +1,27 @@
+.search {
+    background-color: #141414;
+}
+
+.search__results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: 60px;
+    justify-content: flex-start;
+}
+
+.search__result {
+    margin: 10px;
+    height: 250px;
+}
+
+.search__result img {
+    height: inherit;
+    border-radius: 20px;
+    transition: 1s ease-in;
+}
+
+.search__result img:hover {
+    transform: scale(1.4);
+}

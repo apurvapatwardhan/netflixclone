@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 function VideoList({ title, movieList }) {
   const sliderRef = useRef();
+  const [hover, setHover] = useState(false);
+  let hoverClass = hover ? "opaque" : "";
 
   console.log(movieList, "vl")
 
@@ -15,6 +17,7 @@ function VideoList({ title, movieList }) {
     "https://images.pexels.com/photos/9042872/pexels-photo-9042872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   ]);
 
+
   console.log(sliderRef?.current);
 
   useEffect(() => {
@@ -22,27 +25,31 @@ function VideoList({ title, movieList }) {
   });
 
   useEffect(() => {
-      setLinks(
-        movieList?.map(
-          (movie) => `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-        )
-      );
-  },[movieList]);
+    setLinks(
+      movieList?.map(
+        (movie) => `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      )
+    );
+  }, [movieList]);
   console.log("render");
   return (
     <div className="video-list">
       <h2>{title}</h2>
       <div className="video-list__nav">
-        <button onClick={() => sliderRef?.current.slickPrev()}>{"<"}</button>
+        <button onClick={() => {
+          console.log("back button clicked");
+          sliderRef?.current.slickPrev()
+        }}>{"<"}</button>
         <button onClick={() => sliderRef?.current.slickNext()}>{">"}</button>
       </div>
-      <div style={{ width: "100vw" }}>
+      <div style={{ width: "100vw" }} className={`video-list__videos ${hoverClass}`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <Slider
           ref={sliderRef}
           slidesToShow={5}
-          slidesToScroll={2}
+          slidesToScroll={3}
           arrows={false}
           initialSlide={0}
+          showDots={true}
           responsive={[
             {
               breakpoint: 1200,
@@ -61,7 +68,7 @@ function VideoList({ title, movieList }) {
             {
               breakpoint: 600,
               settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1,
               },
             },
@@ -74,9 +81,9 @@ function VideoList({ title, movieList }) {
             },
           ]}
         >
-          {links?.map((link) => {
+          {links?.map((link, index) => {
             return (
-              <div>
+              <div className="video-list__images" >
                 <img src={link} alt="img" className="video-list__image" />
               </div>
             );
@@ -89,15 +96,4 @@ function VideoList({ title, movieList }) {
 
 export default VideoList;
 
-{
-  /* <h2>Category</h2>
-        <Slider {...settings} >
-          {links.map((link) => {
-            return (
-              <div>
-                <img className="video-list__image" src={link} alt="imag" />
-              </div>
-            );
-          })}
-        </Slider> */
-}
+

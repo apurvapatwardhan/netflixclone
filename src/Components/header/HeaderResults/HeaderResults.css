@@ -1,0 +1,37 @@
+.header-results__header {
+    position: absolute;
+    top: 0px;
+}
+
+.header-results__result {
+    border-top: 1px solid white;
+    position: relative;
+    top: 70px;
+}
+
+
+.header-results__genres {
+    display: flex;
+    position: relative;
+    top: 60px;
+    justify-content: center;
+}
+
+.header-results__genres button {
+    display: flex;
+    align-items: center;
+}
+
+.header-results__genres_modal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 60px;
+    height: 200px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.header-results__genres_modal button {
+    width: 10%;
+}

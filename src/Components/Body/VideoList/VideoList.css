@@ -1,38 +1,58 @@
 .video-list {
-    background-color: #141414;
-    padding-bottom: 40px;
+  background-color: #141414;
+  padding-bottom: 40px;
 }
 .video-list__nav {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 .video-list h2 {
-    color:white;
-    margin-bottom: -12px;
-    margin-left: 10px;
+  color: white;
+  margin-bottom: -12px;
+  margin-left: 10px;
 }
 .slider {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
+.video-list__image:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  /* margin: 10px;
+  margin: 0px 10px; */
+}
+
+
 .video-list__image {
-    width: 260px;
-    height: 224px;
-    margin: 10px;
-    margin: 0px 10px;
+  width: 260px;
+  height: 224px;
+  margin: 10px;
+  margin: 0px 10px;
+  display: inline-block;
+  transition: all 500ms ease-out;
 }
 
 .video-list__nav {
-    display: flex;
-    justify-content: center;
-    overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
-.video-list__nav button{
-    width: 30px;
-    margin: 10px;
-    font-size: 20px;
+.video-list__nav button {
+  width: 30px;
+  margin: 10px;
+  font-size: 20px;
+  background-color: #141414;
+  color: white;
+  border: none;
+}
+
+
+.video-list__videos {
     background-color: #141414;
-    color:white;
-    border: none;
+    opacity: 1;
+}
+
+.opaque {
+  opacity:0.2;
 }

@@ -1,24 +1,31 @@
 import { useDispatch, useSelector } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Body from "./Components/Body/Body";
+import SearchResults from "./Components/Body/SearchResults/SearchResults";
 import Categories from "./Components/Body/VideoList/Categories";
 import VideoList from "./Components/Body/VideoList/VideoList";
 import Header from "./Components/header/Header";
-import {movieListAction } from "./State/action/action";
+import Home from "./Components/Home/Home";
+import { movieListAction } from "./State/action/action";
+import HeaderResults from "./Components/header/HeaderResults/HeaderResults"
 function App() {
   // const movies = useSelector((selector) => selector.movie);
   // const genres = useSelector((selector) => selector.genre);
 
   return (
-    <div className="App" >
-      <Header />
-      <Body />
-      <div className="videos">
-        <Categories />
-      </div>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<SearchResults />} />
+          <Route path="/series" element={<HeaderResults />} />
+          <Route path="/films" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
-
 
 export default App;
