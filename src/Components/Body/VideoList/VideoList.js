@@ -7,8 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 function VideoList({ title, movieList }) {
   const sliderRef = useRef();
-  const [hover, setHover] = useState(false);
-  let hoverClass = hover ? "opaque" : "";
 
   console.log(movieList, "vl")
 
@@ -17,8 +15,31 @@ function VideoList({ title, movieList }) {
     "https://images.pexels.com/photos/9042872/pexels-photo-9042872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   ]);
 
+  const styleArray = Array.from({length: links?.length}, a => {
+    return {opacity: 1}
+  })
+  const [styles, setStyles] = useState(styleArray);
 
-  console.log(sliderRef?.current);
+  const highlightHandler = (i) => {
+    let highlightStyles = JSON.parse(JSON.stringify(styles));
+    highlightStyles.forEach((e, index) => {
+      if(index === i) {
+        e.opacity = "1";
+      }
+      else{
+        e.opacity = "0.2";
+      }
+    })
+    setStyles(highlightStyles);
+  }
+
+  const normalizeHandler = (e) => {
+    e.preventDefault();
+    let normalStylesArray = Array.from({length: links?.length}, a => {
+      return {opacity: 1}
+    })
+    setStyles(normalStylesArray);
+  }
 
   useEffect(() => {
     console.log(sliderRef.current);
@@ -42,7 +63,7 @@ function VideoList({ title, movieList }) {
         }}>{"<"}</button>
         <button onClick={() => sliderRef?.current.slickNext()}>{">"}</button>
       </div>
-      <div style={{ width: "100vw" }} className={`video-list__videos ${hoverClass}`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <div style={{ width: "100vw" }} className={`video-list__videos`}>
         <Slider
           ref={sliderRef}
           slidesToShow={5}
@@ -84,7 +105,7 @@ function VideoList({ title, movieList }) {
           {links?.map((link, index) => {
             return (
               <div className="video-list__images" >
-                <img src={link} alt="img" className="video-list__image" />
+                <img src={link} alt="img" className="video-list__image" onMouseEnter={(e) => highlightHandler(index)} style = {styles[index]} onMouseLeave={normalizeHandler}/>
               </div>
             );
           })}

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { seriesAction, seriesGenresAction } from "../../../State/action/action";
 import { genreApiCall } from "../../../API/genreApiCall";
 import { dataApiCall } from "../../../API/dataApiCall";
-import Categories from "../../../Components/Body/VideoList/Categories"
+import Categories from "../../Body/VideoList/Categories"
 
 const API_KEY = `813f004417e46fdc21b11b2dbcd0d00c`
 
