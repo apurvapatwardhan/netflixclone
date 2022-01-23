@@ -49,3 +49,10 @@ export const seriesAction = (id, p) => {
   }
 }
 
+export const errorAction = (p) => {
+  return {
+    type:"SET_ERROR",
+    payload: p
+  }
+}
+

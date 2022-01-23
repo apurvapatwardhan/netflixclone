@@ -67,7 +67,7 @@ function Header() {
 
   const blurHandler = (e) => {
     e.preventDefault();
-    navigate("/");
+    // navigate("/");
     dispatch(searchInputAction(""));
     setFocus(false);
   };
