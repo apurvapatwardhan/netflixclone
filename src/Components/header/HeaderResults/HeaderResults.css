@@ -35,3 +35,19 @@
 .header-results__genres_modal button {
     width: 10%;
 }
+
+.header-results__result__genre {
+    color: white;
+    position: relative;
+    top: 270px;
+    border: 1px solid;
+    width: 13%;
+    height: 30px;
+    margin: auto;
+    background: red;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}

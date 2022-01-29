@@ -22,7 +22,7 @@
   height: 330px;
 }
 .video-list__image:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
 }
 
 .video-list__image {

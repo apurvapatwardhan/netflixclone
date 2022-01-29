@@ -7,6 +7,7 @@ import { seriesAction, seriesGenresAction } from "../../../State/action/action";
 import { genreApiCall } from "../../../API/genreApiCall";
 import { dataApiCall } from "../../../API/dataApiCall";
 import Categories from "../../Body/VideoList/Categories"
+import VideoList from "../../Body/VideoList/VideoList";
 
 const API_KEY = `813f004417e46fdc21b11b2dbcd0d00c`
 
@@ -17,12 +18,17 @@ function HeaderResults() {
   const dispatch = useDispatch();
 
   const [showDropDown, setShowDropDown] = useState(false);
+  const [currentGenre, setCurrentGenre] = useState([])
 
   const dropDownHandler = () => {
-    setShowDropDown(true);
+    let dropDownVisibility = showDropDown;
+    setCurrentGenre([]);
+    setShowDropDown(!showDropDown);
   }
 
-  const genreClickHandler = () => {
+  const genreClickHandler = (i) => {
+    let arr = [seriesGenre[i]];
+    setCurrentGenre(arr);
     setShowDropDown(false);
   }
 
@@ -51,11 +57,19 @@ function HeaderResults() {
         <button onClick={dropDownHandler}><span>Genres</span><ArrowDropDownCircleIcon /></button>
       </div>
       {
-        showDropDown ? <div className="header-results__genres_modal">{seriesGenre?.map(sg => <button onClick={genreClickHandler}>{sg.name}</button>)}</div> : null
+        showDropDown ? <div className="header-results__genres_modal">{seriesGenre?.map((sg, i) => <button onClick={(e) => genreClickHandler(i)}>{sg.name}</button>)}</div> : null
       }
-      <div className="header-results__result">
+      {
+        currentGenre.length === 0 ? (<div className="header-results__result">
         <Categories type="seriesAction" genre={seriesGenre}/>
-      </div>
+      </div>) : (
+        <div className="header-results__result__genre">
+          {
+            series[currentGenre[0]?.name]?.length > 0 ? (<VideoList title={currentGenre[0]?.name} movieList={series[currentGenre[0]?.name]} />) : "No Data"
+          }
+        </div>
+      )
+      }
     </div>
   );
 }
