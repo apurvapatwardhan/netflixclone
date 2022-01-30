@@ -7,6 +7,7 @@ import searchMovieReducer from "./searchMovieReducer";
 import seriesReducer from "./seriesReducer";
 import seriesGenreReducer from "./seriesGenreReducer";
 import errorReducer from "./errorReducer";
+import backDropReducer from "./backDropReducer";
 
 const rootReducer = combineReducers({
   movie: movieReducer,
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   loading: loadingReducer,
   seriesGenre: seriesGenreReducer,
   series: seriesReducer,
-  error: errorReducer
+  error: errorReducer,
+  showBackDrop: backDropReducer
 });
 
 export default rootReducer;

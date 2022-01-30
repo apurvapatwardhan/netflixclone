@@ -1,0 +1,9 @@
+.backdrop-child {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    opacity: 0.9;
+    background: #141414;
+}

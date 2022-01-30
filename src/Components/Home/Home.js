@@ -3,12 +3,18 @@ import { useSelector } from "react-redux";
 import Body from "../Body/Body";
 import Categories from "../Body/VideoList/Categories";
 import Header from "../header/Header";
+import {useState} from "react";
+import Backdrop from "../Body/VideoList/Backdrop/Backdrop"
 
 function Home() {
   const movieGenres = useSelector((selector) => selector.genre);
+  const showBackDrop = useSelector((state) => state.showBackDrop)
 
   return (
     <div className="home">
+      {
+        showBackDrop ? <Backdrop /> : null
+      }
       <Header />
       <Body />
       <div className="videos">
