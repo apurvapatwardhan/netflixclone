@@ -79,3 +79,10 @@ export const showBackDropAction = (p) => {
   }
 }
 
+export const contentDetailsAction = (p) => {
+  return {
+    type:"SET_DETAILS",
+    payload:p
+  }
+}
+

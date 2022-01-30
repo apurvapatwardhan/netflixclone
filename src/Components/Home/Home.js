@@ -5,6 +5,7 @@ import Categories from "../Body/VideoList/Categories";
 import Header from "../header/Header";
 import {useState} from "react";
 import Backdrop from "../Body/VideoList/Backdrop/Backdrop"
+import ContentModal from "../Body/VideoList/ContentModal/ContentModal";
 
 function Home() {
   const movieGenres = useSelector((selector) => selector.genre);
@@ -20,6 +21,7 @@ function Home() {
       <div className="videos">
         <Categories type = {"movieListAction"} genre={movieGenres}/>
       </div>
+      <ContentModal />
     </div>
   );
 }
