@@ -1,0 +1,50 @@
+.content-child {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  height: inherit;
+  padding-left: 20px;
+}
+
+.content-title {
+  font-size: 80px;
+  color: burlywood;
+}
+
+.content-overview {
+  width: 43%;
+  font-size: 20px;
+  color: grey;
+}
+
+.content-rating {
+  font-size: 20px;
+  color: burlywood;
+}
+
+.content-release {
+  font-size: 30px;
+  color: chartreuse;
+}
+
+.content-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  width: 43%;
+}
+
+.content-buttons button {
+    display: block;
+    padding: 8px 25px 8px 25px;
+    background: red;
+    color: white;
+    margin:0px 10px 0px 10px;
+    border: 1px dashed white;
+    cursor: pointer;
+}
+
