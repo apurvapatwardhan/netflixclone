@@ -1,12 +1,13 @@
+.content {
+  display: flex;
+  height: 600px;
+}
+
 .content-child {
   display: flex;
   flex-direction: column;
   color: white;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to right, rgb(0,0,0,1), rgb(0,0,0,0.75), rgb(0,0,0,0.5));
   height: inherit;
   padding-left: 20px;
 }
@@ -14,22 +15,26 @@
 .content-title {
   font-size: 80px;
   color: burlywood;
+  margin-top: -5px;
 }
 
 .content-overview {
   width: 43%;
   font-size: 20px;
   color: grey;
+  margin-top: -5px;
 }
 
 .content-rating {
   font-size: 20px;
   color: burlywood;
+  margin-top: -5px;
 }
 
 .content-release {
   font-size: 30px;
   color: chartreuse;
+  margin-top: -5px;
 }
 
 .content-buttons {
@@ -48,3 +53,6 @@
     cursor: pointer;
 }
 
+.content-image img {
+  height: 600px;
+}

@@ -86,3 +86,17 @@ export const contentDetailsAction = (p) => {
   }
 }
 
+export const playKeyAction = (p) => {
+  return {
+    type: "SET_YT_KEY",
+    payload: p
+  }
+}
+
+export const playAction = (p) => {
+  return {
+    type: "SET_PLAY",
+    payload: p
+  }
+}
+

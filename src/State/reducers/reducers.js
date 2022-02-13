@@ -9,6 +9,8 @@ import seriesGenreReducer from "./seriesGenreReducer";
 import errorReducer from "./errorReducer";
 import backDropReducer from "./backDropReducer";
 import contentDetailsReducer from "./contentDetailsReducer"
+import playKeyReducer from "./playKeyReducer";
+import playReducer from "./playReducer";
 
 const rootReducer = combineReducers({
   movie: movieReducer,
@@ -20,7 +22,9 @@ const rootReducer = combineReducers({
   series: seriesReducer,
   error: errorReducer,
   showBackDrop: backDropReducer,
-  contentDetails: contentDetailsReducer
+  contentDetails: contentDetailsReducer,
+  playKey: playKeyReducer,
+  play: playReducer
 });
 
 export default rootReducer;

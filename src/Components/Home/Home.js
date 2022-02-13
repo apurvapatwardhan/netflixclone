@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import Body from "../Body/Body";
 import Categories from "../Body/VideoList/Categories";
@@ -9,13 +9,18 @@ import ContentModal from "../Body/VideoList/ContentModal/ContentModal";
 
 function Home() {
   const movieGenres = useSelector((selector) => selector.genre);
-  const showBackDrop = useSelector((state) => state.showBackDrop)
+  const showBackDrop = useSelector((state) => state.showBackDrop);
+
+  useEffect(() => {
+    console.log(showBackDrop);
+
+  }, [showBackDrop])
 
   return (
     <div className="home">
-      {
-        showBackDrop ? <Backdrop /> : null
-      }
+    {
+      showBackDrop ? <Backdrop /> : null
+    }
       <Header />
       <Body />
       <div className="videos">

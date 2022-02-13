@@ -8,6 +8,8 @@ import { genreApiCall } from "../../../API/genreApiCall";
 import { dataApiCall } from "../../../API/dataApiCall";
 import Categories from "../../Body/VideoList/Categories"
 import VideoList from "../../Body/VideoList/VideoList";
+import ContentModal from "../../Body/VideoList/ContentModal/ContentModal";
+import Backdrop from "../../Body/VideoList/Backdrop/Backdrop";
 
 const API_KEY = `813f004417e46fdc21b11b2dbcd0d00c`
 
@@ -15,6 +17,7 @@ function HeaderResults() {
 
   const series = useSelector(state => state.series);
   const seriesGenre = useSelector(state => state.seriesGenre)
+  const showBackDrop = useSelector((state) => state.showBackDrop);
   const dispatch = useDispatch();
 
   const [showDropDown, setShowDropDown] = useState(false);
@@ -50,6 +53,9 @@ function HeaderResults() {
    
   return (
     <div>
+      {
+        showBackDrop ? <Backdrop /> : null
+      }
       <div className="header-results__header">
         <Header />
       </div>
@@ -70,6 +76,7 @@ function HeaderResults() {
         </div>
       )
       }
+      <ContentModal />
     </div>
   );
 }
