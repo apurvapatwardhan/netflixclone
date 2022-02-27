@@ -64,6 +64,10 @@
   color: white;
 }
 
+.avatar {
+  border-radius: 40%;
+}
+
 /* .notification {
   font-size: 40px;
 } */

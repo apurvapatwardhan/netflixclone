@@ -1,0 +1,48 @@
+.bg {
+    overflow-y: hidden;
+}
+
+.login-modal {
+    width: 33%;
+    position: absolute;
+    background-color: #000000;
+    top: 10%;
+    left: 35%;
+    height: 60%;
+    opacity: 0.95;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.login-modal input {
+    background: #333;
+    width: 53%;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 30px;
+}
+
+.login-modal button {
+    background: red;
+    width:53%;
+    align-self: center;
+    border: none;
+    line-height: 30px;
+    color:white;
+}
+
+input:focus {
+    border-bottom: 2px solid orange;
+    border-right: 2px solid orange;
+    outline: none;
+}
+
+.login-modal label {
+    position: relative;
+    bottom: 20px;
+    color:orange
+}

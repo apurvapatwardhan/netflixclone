@@ -100,3 +100,10 @@ export const playAction = (p) => {
   }
 }
 
+export const loginAction = (p) => {
+  return {
+    type: "SET_LOGIN_CRED",
+    payload: p
+  }
+}
+

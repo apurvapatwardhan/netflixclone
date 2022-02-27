@@ -10,6 +10,7 @@ import Header from "./Components/header/Header";
 import Home from "./Components/Home/Home";
 import { movieListAction } from "./State/action/action";
 import HeaderResults from "./Components/header/HeaderResults/HeaderResults"
+import Login from "./Components/Login/Login";
 function App() {
   // const movies = useSelector((selector) => selector.movie);
   // const genres = useSelector((selector) => selector.genre);
@@ -22,6 +23,7 @@ function App() {
           <Route path="/search" element={<SearchResults />} />
           <Route path="/series" element={<HeaderResults />} />
           <Route path="/films" element={<Home />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

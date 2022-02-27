@@ -76,6 +76,10 @@ function Header() {
     navigate("/search");
     dispatch(searchInputAction(e.target.value));
   };
+  const loginHandler = (e) => {
+    e.preventDefault();
+    navigate('/login');
+  }
 
   return (
     <div className={classes.parent}>

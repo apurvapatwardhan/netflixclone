@@ -11,6 +11,7 @@ import backDropReducer from "./backDropReducer";
 import contentDetailsReducer from "./contentDetailsReducer"
 import playKeyReducer from "./playKeyReducer";
 import playReducer from "./playReducer";
+import loginReducer from "./loginReducer";
 
 const rootReducer = combineReducers({
   movie: movieReducer,
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   showBackDrop: backDropReducer,
   contentDetails: contentDetailsReducer,
   playKey: playKeyReducer,
-  play: playReducer
+  play: playReducer,
+  loginUser: loginReducer
 });
 
 export default rootReducer;
