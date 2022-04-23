@@ -16,6 +16,7 @@
   
   color: burlywood;
   margin-top: -5px;
+  font-size: 3rem;
 }
 
 .content-overview {
@@ -35,6 +36,7 @@
   font-size: 30px;
   color: chartreuse;
   margin-top: -5px;
+  font-size: 2rem;
 }
 
 .content-buttons {
@@ -55,4 +57,71 @@
 
 .content-image img {
   height: 600px;
+}
+
+@media only screen and (max-width: 900px) {
+
+  .content {
+    display: flex;
+    height: 600px;
+  }
+  
+  .content-child {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-image: linear-gradient(to right, rgb(0,0,0,1), rgb(0,0,0,0.75), rgb(0,0,0,0.5));
+    height: inherit;
+    padding-left: 20px;
+  }
+  
+  .content-title {
+    
+    color: burlywood;
+    margin-top: -5px;
+    font-size: 3rem;
+  }
+  
+  .content-overview {
+    display: none;
+  }
+  
+  .content-rating {
+    color: burlywood;
+    margin-top: -5px;
+  }
+  
+  .content-release {
+    font-size: 30px;
+    color: chartreuse;
+    margin-top: -5px;
+    font-size: 2rem;
+  }
+  
+  .content-buttons {
+    display: flex;
+    flex-flow: row wrap;
+    width: 43%;
+  }
+  
+  .content-buttons button {
+      display: block;
+      padding: 8px 25px 8px 25px;
+      background: red;
+      color: white;
+      margin:0px 10px 0px 10px;
+      border: 1px dashed white;
+      cursor: pointer;
+  }
+  
+  .content-image img {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width:500px){
+  .content-image {
+    display: none;
+  }
+  
 }

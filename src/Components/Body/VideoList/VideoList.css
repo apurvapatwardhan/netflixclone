@@ -1,6 +1,5 @@
 .video-list {
   background-color: #141414;
-  padding-bottom: 40px;
 }
 .video-list__nav {
   display: flex;
@@ -17,16 +16,17 @@
 }
 
 .video-list__images {
-  margin-top: 20px;
   width: 330px;
   height: 330px;
+  position: relative;
+  left: 1em;
 }
 .video-list__image:hover {
   transform: scale(1.2);
 }
 
 .video-list__image {
-  transition: all 500ms ease-in
+  transition: all 500ms ease-in;
 }
 
 .video-list__image {
@@ -34,7 +34,6 @@
   height: 254px;
   /* margin: 10px;
   margin: 0px 10px; */
-
 }
 
 .video-list__nav {
@@ -52,8 +51,7 @@
   border: none;
 }
 
-
 .video-list__videos {
-    background-color: #141414;
-    opacity: 1;
+  background-color: #141414;
+  opacity: 1;
 }

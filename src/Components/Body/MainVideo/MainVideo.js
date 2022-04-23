@@ -38,8 +38,7 @@ function MainVideo({ reference }) {
       </div>
       <div className="video-desc" ref={ref1}>
         <div className="desc">
-          This vidoe is the main video of the netflix clone please wathc it
-          agdgfhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+          This video is the main video of the netflix clone please watch it and enjoy the clone
         </div>
         <div className="btns">
           <button className="play">
